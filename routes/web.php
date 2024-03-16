@@ -5,7 +5,7 @@
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +35,7 @@ Route::prefix('')->group(function() {
     Route::post('/logout', [LoginRegisterController::class, 'logout'])->name('logout');
 });
 
+Route::get('/posts',[HomeController::class,'index'])->name('posts.posting');
 
 // Define Custom Verification Routes
 Route::prefix('email')->group(function() {
