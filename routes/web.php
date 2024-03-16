@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Dashboard');
+    return view('dashboard');
 });
 
 // Define Custom User Registration & Login Routes

@@ -8,8 +8,8 @@
     <title>Meme Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <!-- Tailwind CSS -->
-    {{-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> --}}
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Bosstrasp core css -->
@@ -25,7 +25,7 @@
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse animate__animated animate__bounceIn" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     @guest
                         <li class="nav-item">
@@ -48,11 +48,11 @@
                                         onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">Logout</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                        <a href="#" class="dropdown-item">posting!</a>
                                         @csrf
                                     </form>
-                                    <li>
-                                        <a href="#" class="dropwdonw-item">posting!</a>
-                                    </li>
+                                </li>
+                                <li>
                                 </li>
                             </ul>
                         </li>
@@ -63,7 +63,7 @@
     </nav>
 
     <div class="container">
-        @yield('content');
+        @yield('content')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
