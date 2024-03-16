@@ -50,7 +50,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
                                     </form>
-                                    <a href="{{route('posts.posting')}}" class="dropdown-item">posting!</a>
+                                    {{-- <a href="{{route('dashboard')}}" class="dropdown-item">posting!</a> --}}
                                 </li>
                                 <li>
                                 </li>

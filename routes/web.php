@@ -22,8 +22,12 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
 
-
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/image-upload', 'index')->name('image.form');
+    Route::post('/upload-image', 'storeImage')->name('image.store');
+});
 
 // Define Custom User Registration & Login Routes
 Route::prefix('')->group(function() {
@@ -35,7 +39,6 @@ Route::prefix('')->group(function() {
     Route::post('/logout', [LoginRegisterController::class, 'logout'])->name('logout');
 });
 
-Route::get('/posts',[HomeController::class,'index'])->name('posts.posting');
 
 // Define Custom Verification Routes
 Route::prefix('email')->group(function() {
