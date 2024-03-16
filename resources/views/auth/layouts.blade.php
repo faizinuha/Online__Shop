@@ -50,13 +50,9 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
                                     </form>
-                                    {{-- <li>
-                                        <a class="dropdown-item" href="{{ route('upload.photo') }}">
-                                            Upload Photo
-                                        </a>
-                                    </li> --}}
+
                                 </li>
-                                {{-- main content --}}
+
 
                             </ul>
                         </li>
