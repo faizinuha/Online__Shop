@@ -50,10 +50,10 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
                                     </form>
-
+                                    <li>
+                                        <a href="#" class="dropwdonw-item">posting!</a>
+                                    </li>
                                 </li>
-
-
                             </ul>
                         </li>
                     @endguest

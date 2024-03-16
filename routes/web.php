@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.home');
+    return view('Dashboard');
 });
 
 // Define Custom User Registration & Login Routes
@@ -37,5 +37,3 @@ Route::prefix('email')->group(function() {
     Route::get('/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
     Route::post('/resend', [VerificationController::class, 'resend'])->name('verification.resend');
 });
-
-
