@@ -5,6 +5,7 @@
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+
+
+
 // Define Custom User Registration & Login Routes
 Route::prefix('')->group(function() {
     Route::get('/register', [LoginRegisterController::class, 'register'])->name('register');
@@ -30,6 +34,7 @@ Route::prefix('')->group(function() {
     Route::get('/home', [LoginRegisterController::class, 'home'])->name('home');
     Route::post('/logout', [LoginRegisterController::class, 'logout'])->name('logout');
 });
+
 
 // Define Custom Verification Routes
 Route::prefix('email')->group(function() {

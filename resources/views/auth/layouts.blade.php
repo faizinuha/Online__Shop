@@ -48,9 +48,9 @@
                                         onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">Logout</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                                        <a href="#" class="dropdown-item">posting!</a>
                                         @csrf
                                     </form>
+                                    <a href="{{route('posts.posting')}}" class="dropdown-item">posting!</a>
                                 </li>
                                 <li>
                                 </li>
