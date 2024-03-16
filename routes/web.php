@@ -22,12 +22,12 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
+Route::get('/dashboard',[LoginRegisterController::class,'index'])->name('dashboard');
 
-Route::controller(HomeController::class)->group(function(){
-    Route::get('/image-upload', 'index')->name('image.form');
-    Route::post('/upload-image', 'storeImage')->name('image.store');
-});
+// Route::controller(HomeController::class)->group(function(){
+//     Route::get('/image-upload', 'index')->name('image.form');
+//     Route::post('/upload-image', 'storeImage')->name('image.store');
+// });
 
 // Define Custom User Registration & Login Routes
 Route::prefix('')->group(function() {

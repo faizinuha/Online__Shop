@@ -73,7 +73,7 @@ class LoginRegisterController extends Controller
     {
         return view('auth.login');
     }
-
+    
     /**
      * Authenticate the user.
      *

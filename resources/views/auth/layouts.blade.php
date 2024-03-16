@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meme Website</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="sweetalert2.min.css">
     <!-- Bosstrasp core css -->
@@ -18,14 +17,14 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-danger">
         <div class="container">
-            <a class="navbar-brand" href="{{ URL('/') }}">blogs video</a>
+            <a class="navbar-brand" href="{{ url('/') }}">blogs video</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse animate__animated animate__bounceIn" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     @guest
                         <li class="nav-item">
@@ -50,7 +49,6 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
                                     </form>
-                                    {{-- <a href="{{route('dashboard')}}" class="dropdown-item">posting!</a> --}}
                                 </li>
                                 <li>
                                 </li>
@@ -62,13 +60,13 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="">
         @yield('content')
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
