@@ -32,6 +32,7 @@
                                     <th scope="col">Gambar buku:</th>
                                     <th scope="col">Nama Publish:</th>
                                     <th scope="col">Di buat:</th>
+                                    <th scope="col">Tanggal di buat:</th>
                                     <th scope="col">AKSI:</th>
                                 </tr>
                             </thead>
@@ -72,6 +73,7 @@
                                         </td>
                                         <td>{{ $post->title }}</td>
                                         <td>{!! $post->content !!}</td>
+                                        <td> <p class="text-center text-muted"> {{ $post->created_at->format('Y-m-d H:i:s') }}</p></td>
                                         <div class="row">
 
                                             <td class="align-items-center text-center">
