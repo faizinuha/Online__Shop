@@ -64,3 +64,30 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+<!-- Langkah2 ketika anda mau ubah http://127.0.0.1:8000/ langsung ke login -->
+Buka file app/Http/Kernel.php dan tambahkan middleware baru:
+1.'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+
+langkah ke 2 
+Kemudian, buat middleware baru dengan menjalankan perintah artisan:
+2.php artisan make:middleware RedirectIfAuthenticated
+
+Buka file yang baru dibuat app/Http/Middleware/RedirectIfAuthenticated.php dan ubah method handle() sebagai berikut:
+langkah ke 3
+3.
+<!-- tambahkn ini public function handle($request, Closure $next, $guard = null)
+{
+    if (Auth::guard($guard)->check()) {
+        return redirect('/home'); // Ubah /home menjadi rute yang Anda inginkan, misalnya /dashboard atau /auth.home
+    }
+
+    return $next($request);
+}
+ -->
+ Sekarang, Anda perlu mendaftarkan middleware tersebut di dalam web middleware group dalam file app/Http/Kernel.php:
+ langkah ke 4
+ <!-- 'web' => [
+    // ...
+    \App\Http\Middleware\RedirectIfAuthenticated::class,
+], -->
