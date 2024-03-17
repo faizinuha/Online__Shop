@@ -27,13 +27,40 @@
                         <table class="table table-bordered" id="data">
                             <thead>
                                 <tr>
-                                    <a href="../dashboard" class="btn btn-primary rounded-bottom mb-2">back</a>
+                                    <a href="../dashboard"
+                                        class="btn btn-primary rounded-bottom mb-2 align-items-center">back</a>
                                     <th scope="col">Gambar buku:</th>
                                     <th scope="col">Nama Publish:</th>
                                     <th scope="col">Di buat:</th>
                                     <th scope="col">AKSI:</th>
                                 </tr>
                             </thead>
+                            {{-- Style --}}
+                            <style>
+                                <style>
+
+                                /* CSS untuk tombol */
+                                .btn-group .btn {
+                                    border-radius: 0;
+                                }
+
+                                .btn-group .btn:first-child {
+                                    border-top-left-radius: 5px;
+                                    border-bottom-left-radius: 5px;
+                                }
+
+                                .btn-group .btn:last-child {
+                                    border-top-right-radius: 5px;
+                                    border-bottom-right-radius: 5px;
+                                }
+
+                                /* CSS untuk gambar */
+                                .rounded {
+                                    border-radius: 10px;
+                                }
+                            </style>
+                                {{-- end css --}}
+                            
                             <tbody>
                                 @forelse ($post as $post)
                                     <tr>
@@ -47,7 +74,7 @@
                                         <td>{!! $post->content !!}</td>
                                         <div class="row">
 
-                                            <td class="text-center">
+                                            <td class="align-items-center text-center">
                                                 <form onsubmit="return confirm('Thanks You🎈');"
                                                     action="{{ route('posts.destroy', $post->id) }}" method="POST">
                                                     <a href="{{ route('posts.show', $post->id) }}"
