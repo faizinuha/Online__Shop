@@ -33,9 +33,7 @@ class LoginRegisterController extends Controller
         return view('auth.register');
     }
 
-    public function posting() {
-        return view('posts.posting');
-    }
+    
     /**
      * Store a new user.
      *

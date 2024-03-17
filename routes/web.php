@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +20,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('auth.home');
 });
 
 Route::get('/dashboard',[LoginRegisterController::class,'index'])->name('dashboard');
+Route::resource('/posts',PostController::class);
 
 // Route::controller(HomeController::class)->group(function(){
 //     Route::get('/image-upload', 'index')->name('image.form');
