@@ -92,7 +92,7 @@ class LoginRegisterController extends Controller
         }
 
         return back()->withErrors([
-            'email' => 'Maaf Email Belum terdaftar',
+            'email' => 'Password Failed!',
         ])->onlyInput('email');
 
     } 

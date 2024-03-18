@@ -5,7 +5,6 @@
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 
 /*
@@ -23,8 +22,7 @@ Route::get('/', function () {
     return view('auth.home');
 });
 
-Route::get('/dashboard',[LoginRegisterController::class,'index'])->name('dashboard');
-Route::resource('/posts',PostController::class);
+Route::resource('/posts', PostController::class);
 
 // Route::controller(HomeController::class)->group(function(){
 //     Route::get('/image-upload', 'index')->name('image.form');
@@ -32,7 +30,7 @@ Route::resource('/posts',PostController::class);
 // });
 
 // Define Custom User Registration & Login Routes
-Route::prefix('')->group(function() {
+Route::prefix('')->group(function () {
     Route::get('/register', [LoginRegisterController::class, 'register'])->name('register');
     Route::post('/store', [LoginRegisterController::class, 'store'])->name('store');
     Route::get('/login', [LoginRegisterController::class, 'login'])->name('login');
@@ -43,7 +41,7 @@ Route::prefix('')->group(function() {
 
 
 // Define Custom Verification Routes
-Route::prefix('email')->group(function() {
+Route::prefix('email')->group(function () {
     Route::get('/verify', [VerificationController::class, 'notice'])->name('verification.notice');
     Route::get('/verify/{id}/{hash}', [VerificationController::class, 'verify'])->name('verification.verify');
     Route::post('/resend', [VerificationController::class, 'resend'])->name('verification.resend');

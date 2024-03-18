@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>++++ Perpustakaan ++++</title>
-
+    <title>Webiste</title>
+    <link rel="stylesheet" href="/resources/css/renponsif.scss">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -27,7 +27,7 @@
                         <table class="table table-bordered" id="data">
                             <thead>
                                 <tr>
-                                    <a href="../dashboard"
+                                    <a href="{{route('home')}}"
                                         class="btn btn-primary rounded-bottom mb-2 align-items-center">back</a>
                                     <th scope="col">Gambar buku:</th>
                                     <th scope="col">Nama Publish:</th>
@@ -36,31 +36,6 @@
                                     <th scope="col">AKSI:</th>
                                 </tr>
                             </thead>
-                            {{-- Style --}}
-                            <style>
-                                <style>
-
-                                /* CSS untuk tombol */
-                                .btn-group .btn {
-                                    border-radius: 0;
-                                }
-
-                                .btn-group .btn:first-child {
-                                    border-top-left-radius: 5px;
-                                    border-bottom-left-radius: 5px;
-                                }
-
-                                .btn-group .btn:last-child {
-                                    border-top-right-radius: 5px;
-                                    border-bottom-right-radius: 5px;
-                                }
-
-                                /* CSS untuk gambar */
-                                .rounded {
-                                    border-radius: 10px;
-                                }
-                            </style>
-                                {{-- end css --}}
                             
                             <tbody>
                                 @forelse ($post as $post)
@@ -87,7 +62,8 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger">Delete
                                                         Buku:</button>
-
+                                                        
+                                                        <a href="{{ asset('storage/'.$post->image) }}" class=" btn btn-sm btn-primary">Download</a>
                                                 </form>
                                             </td>
                                     </tr>

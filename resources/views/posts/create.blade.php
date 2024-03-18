@@ -67,7 +67,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
-                            <button type="button" class="btn btn-md btn-warning" onclick="Back()">Back</button>
+                            <a href="{{route('posts.index')}}"  type="button" class="btn btn-md btn-warning" onclick="Back()">Back</a>
 
                         </form>
 
@@ -97,7 +97,7 @@
     <script>
         function Back() {
             alert('Are You Ready back')
-            location.href = "../dashboard";
+            // location.href = "index.blade.php";
         }
     </script>
     @include('footer.inclaude')
