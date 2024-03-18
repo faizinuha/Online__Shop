@@ -15,7 +15,9 @@
 
 Laravel adalah kerangka kerja aplikasi web dengan sintaks yang ekspresif dan elegan. Kami percaya pengembangan harus menjadi pengalaman yang menyenangkan dan kreatif untuk benar-benar memuaskan. Laravel menghilangkan rasa sakit dalam pengembangan dengan mempermudah tugas-tugas umum yang digunakan dalam banyak proyek web, seperti:
 
-- <img src="public/anime.gif" alt="License" >
+-<p align="center">
+    <img src="public/anime.gif" alt="License">
+</p>
 
 
 Laravel dapat diakses, kuat, dan menyediakan alat yang diperlukan untuk aplikasi besar dan kokoh.
