@@ -27,8 +27,6 @@
                         <table class="table table-bordered" id="data">
                             <thead>
                                 <tr>
-                                    <a href="{{route('home')}}"
-                                        class="btn btn-primary rounded-bottom mb-2 align-items-center">back</a>
                                     <th scope="col">Gambar buku:</th>
                                     <th scope="col">Nama Publish:</th>
                                     <th scope="col">Di buat:</th>

@@ -45,7 +45,10 @@
                                Login
                             </button>
                         </div>
-
+                        {{-- <div class="text-center" style="margin-top: 10px;">
+                            <span style="margin-right: 5px;">||</span>
+                            <a href="{{ route('password.request') }}">Forgot Password</a>
+                        </div> --}}
                     </form>
                 </div>
             </div>
@@ -53,11 +56,12 @@
     </div>
     <script>
         function sweetalert() {
-            // Tambahkan kode Swal.fire() di sini
+            // Menampilkan pesan sukses
             Swal.fire({
-                title: "Terima kasih Silakan Masuk!",
-                text: "Silakan Masuk ke dashboard",
-                icon: "success"
+                icon: 'success',
+                title: 'Login Successful!',
+                showConfirmButton: false,
+                timer: 1500 // Durasi pesan (dalam milidetik)
             });
         }
     </script>

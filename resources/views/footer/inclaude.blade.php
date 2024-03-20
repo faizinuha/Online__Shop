@@ -8,6 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h5 class="container text-center">Copyright 2025</h5>
+    <!-- Konten utama di sini -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">Copyright &copy; 2025</span>
+        </div>
+    </footer>
 </body>
 </html>

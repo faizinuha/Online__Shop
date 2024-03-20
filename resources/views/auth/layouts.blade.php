@@ -43,14 +43,17 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="{{ route('posts.index') }}">Crud</a>
+                                    <a href="{{route('home')}}" class="dropdown-item">-Menu</a>
                                 </li>
-                                <a class="dropdown-item" href="{{ route('posts.create') }}">Create</a>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('posts.index') }}">-Crud</a>
+                                </li>
+                                <a class="dropdown-item" href="{{ route('posts.create') }}">-Create</a>
                         </li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">Logout</a>
+                            document.getElementById('logout-form').submit();">-Logout</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
                             </form>
