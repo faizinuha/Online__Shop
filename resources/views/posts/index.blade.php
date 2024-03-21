@@ -28,6 +28,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Gambar buku:</th>
+                                    <th scope="col">Pemilik:</th>
                                     <th scope="col">Nama Publish:</th>
                                     <th scope="col">Di buat:</th>
                                     <th scope="col">Tanggal di buat:</th>
@@ -44,9 +45,10 @@
                                             <img src="{{ asset('storage/' . $post->image) }}" class="rounded img-fluid"
                                                 style="width: 150px">
                                         </td>
+                                        <td> {{ Auth::user()->name }} </td>
                                         <td>{{ $post->title }}</td>
                                         <td>{!! $post->content !!}</td>
-                                        <td> <p class="text-center text-muted"> {{ $post->created_at->format('Y-m-d H:i:s') }}</p></td>
+                                        <td><p class="text-center text-muted"> {{ $post->created_at->format('Y-m-d H:i:s') }}</p></td>
                                         <div class="row">
 
                                             <td class="align-items-center text-center">
@@ -60,7 +62,6 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger">Delete
                                                         Buku:</button>
-                                                        
                                                         <a href="{{ asset('storage/'.$post->image) }}" class=" btn btn-sm btn-primary">Download</a>
                                                 </form>
                                             </td>
