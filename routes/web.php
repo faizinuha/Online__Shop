@@ -20,9 +20,15 @@ Route::get('/', function () {
 
 Route::resource('/posts', PostController::class);
 
-
+// Route::controller(HomeController::class)->group(function(){
+//     Route::get('/image-upload', 'index')->name('image.form');
+//     Route::post('/upload-image', 'storeImage')->name('image.store');
+// });
 
 // Define Custom User Registration & Login Routes
+
+
+
 Route::prefix('')->group(function () {
     Route::get('/register', [LoginRegisterController::class, 'register'])->name('register');
     Route::post('/store', [LoginRegisterController::class, 'store'])->name('store');
@@ -31,6 +37,7 @@ Route::prefix('')->group(function () {
     Route::get('/home', [LoginRegisterController::class, 'home'])->name('home');
     Route::post('/logout', [LoginRegisterController::class, 'logout'])->name('logout');
 });
+
 
 // Define Custom Verification Routes
 Route::prefix('email')->group(function () {
