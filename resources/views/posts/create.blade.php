@@ -23,9 +23,7 @@
                     <div class="card-body">
 
                         <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
-
                             @csrf
-
                             <div class="form-group">
                                 <label class="font-weight-bold">Gambar buku:</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror"

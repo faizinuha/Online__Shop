@@ -26,29 +26,43 @@
                     <div class="card-body">
                         <table class="table table-bordered" id="data">
                             <thead>
+                                <a href="{{ route('home') }}" class="btn btn-danger mb-2">back</a>
+                                <a href="{{route('posts.create')}}" class="btn btn-primary">Add</a>
                                 <tr>
                                     <th scope="col">Gambar buku:</th>
                                     <th scope="col">Pemilik:</th>
                                     <th scope="col">Nama Publish:</th>
-                                    <th scope="col">Di buat:</th>
+                                    <th scope="col">Tentang Buku:</th>
                                     <th scope="col">Tanggal di buat:</th>
                                     <th scope="col">AKSI:</th>
                                 </tr>
                             </thead>
-                            
+
                             <tbody>
                                 @forelse ($post as $post)
                                     <tr>
 
+                                        <style>
+                                            .img-hover {
+                                                transition: transform 0.3s ease;
+                                            }
 
+                                            .img-hover:hover {
+                                                transform: scale(1.1);
+                                                /* Ubah angka sesuai dengan faktor perbesaran yang diinginkan */
+                                            }
+                                        </style>
                                         <td class="text-center">
-                                            <img src="{{ asset('storage/' . $post->image) }}" class="rounded img-fluid"
+                                            <img src="{{ asset('storage/' . $post->image) }}" class="rounded img-fluid img-hover"
                                                 style="width: 150px">
                                         </td>
                                         <td> {{ Auth::user()->name }} </td>
                                         <td>{{ $post->title }}</td>
                                         <td>{!! $post->content !!}</td>
-                                        <td><p class="text-center text-muted"> {{ $post->created_at->format('Y-m-d H:i:s') }}</p></td>
+                                        <td>
+                                            <p class="text-center text-muted">
+                                                {{ $post->created_at->format('Y-m-d H:i:s') }}</p>
+                                        </td>
                                         <div class="row">
 
                                             <td class="align-items-center text-center">
@@ -62,7 +76,8 @@
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-sm btn-danger">Delete
                                                         Buku:</button>
-                                                        <a href="{{ asset('storage/'.$post->image) }}" class=" btn btn-sm btn-primary">Download</a>
+                                                    <a href="{{ asset('storage/' . $post->image) }}"
+                                                        class=" btn btn-sm btn-primary">Download</a>
                                                 </form>
                                             </td>
                                     </tr>
