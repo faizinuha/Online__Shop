@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-3 row">
+                    {{-- <div class="mb-3 row">
                         <div class="col-md-6 offset-md-4">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="remember" name="remember">
@@ -64,7 +64,7 @@
                                 </label>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="text-center">
                         <button type="submit" class="btn btn-info">
                             <i class="fa fa-circle" aria-hidden="true"></i>register

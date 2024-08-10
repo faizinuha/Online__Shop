@@ -1,8 +1,12 @@
+
+
+
 <?php
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +19,7 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('auth.home');
+    return view('home');
 });
 
 Route::resource('/posts', PostController::class);

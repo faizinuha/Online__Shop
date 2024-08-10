@@ -1,19 +1,10 @@
-<?php
-
+<?php 
 namespace App\Http\Controllers;
 
-//import Model "Post
 use App\Models\Post;
-
 use Illuminate\Http\Request;
-
-//return type View
 use Illuminate\View\View;
-
-//return type redirectResponse
 use Illuminate\Http\RedirectResponse;
-
-//import Facade "Storage"
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
@@ -23,15 +14,13 @@ class PostController extends Controller
      *
      * @return View
      */
-
-
     public function index(): View
     {
-        //get posts
-        $post = Post::latest()->paginate(5);
+        // Get posts
+        $posts = Post::latest()->paginate(5);
 
-        //render view with posts
-        return view('posts.index', compact('post'));
+        // Render view with posts
+        return view('posts.index', compact('posts')); // Use plural $posts
     }
 
     /**
@@ -44,8 +33,6 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-
-
     /**
      * store
      *
@@ -54,27 +41,25 @@ class PostController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        //validate form
+        // Validate form
         $this->validate($request, [
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'title' => 'required|min:5',
             'content' => 'required|min:10'
         ]);
 
-        //upload image
+        // Upload image
         $image = $request->file('image');
-        // $image->storeAs('public/storage/posts', $image->hashName());
         $imageFile = Storage::disk('public')->put('posts', $image);
 
-        //create post
+        // Create post
         Post::create([
-            // 'image' => $image->hashName(),
             'image' => $imageFile,
             'title' => $request->title,
             'content' => $request->content
         ]);
 
-        //redirect to index
+        // Redirect to index
         return redirect()->route('posts.index');
     }
 
@@ -86,10 +71,10 @@ class PostController extends Controller
      */
     public function show(string $id): View
     {
-        //get post by ID
+        // Get post by ID
         $post = Post::findOrFail($id);
 
-        //render view with post
+        // Render view with post
         return view('posts.show', compact('post'));
     }
 
@@ -97,7 +82,7 @@ class PostController extends Controller
      * edit
      *
      * @param  mixed $id
-     * @return void
+     * @return View
      */
     public function edit(string $id): View
     {
@@ -117,67 +102,62 @@ class PostController extends Controller
      */
     public function update(Request $request, $id): RedirectResponse
     {
-        //validate form
+        // Validate form
         $this->validate($request, [
             'image' => 'image|mimes:jpeg,jpg,png|max:2048',
             'title' => 'required|min:5',
             'content' => 'required|min:10'
         ]);
 
-        //get post by ID
-        $posts = Post::findOrFail($id);
+        // Get post by ID
+        $post = Post::findOrFail($id);
 
-        //check if image is uploaded
+        // Check if image is uploaded
         if ($request->hasFile('image')) {
-            //delete old image
-            Storage::disk('public')->delete($posts->image);
+            // Delete old image
+            Storage::disk('public')->delete($post->image);
 
-            //upload new image
+            // Upload new image
             $image = $request->file('image');
-            // $image->storeAs('public/storage/posts', $image->hashName());
             $imageFile = Storage::disk('public')->put('posts', $image);
 
-            //update post with new image
-            $posts->update([
-                // 'image' => $image->hashName(),
+            // Update post with new image
+            $post->update([
                 'image' => $imageFile,
                 'title' => $request->title,
                 'content' => $request->content
             ]);
 
         } else {
-
-            //update post without image
-            $posts->update([
+            // Update post without image
+            $post->update([
                 'title' => $request->title,
                 'content' => $request->content
             ]);
         }
 
-        //redirect to index
+        // Redirect to index
         return redirect()->route('posts.index')->with(['Data Berhasil di Update']);
     }
 
     /**
      * destroy
      *
-     * @param  mixed $post
-     * @return void
+     * @param  mixed $id
+     * @return RedirectResponse
      */
     public function destroy($id): RedirectResponse
     {
-        //get post by ID
+        // Get post by ID
         $post = Post::findOrFail($id);
 
-
-        //delete image
+        // Delete image
         Storage::delete('public/' . $post->image);
 
-        //delete post
+        // Delete post
         $post->delete();
 
-        //redirect to index
+        // Redirect to index
         return redirect()->route('posts.index')->with(['Data Berhasil Dihapus!']);
     }
-    
 }

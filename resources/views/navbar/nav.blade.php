@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('auth.componne')
     <nav class="navbar navbar-expand-lg bg-danger sticky-top bg-transparent">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">blogs video</a>

@@ -1,7 +1,7 @@
-@extends('auth.layouts')
+@extends('auth.componne')
 
-@section('content')
-
+@section('codes') 
+<script src="https://cdn.tailwindcss.com"></script>
 <div class="row justify-content-center mt-5">
     <div class="col-md-8">
         <div class="card">

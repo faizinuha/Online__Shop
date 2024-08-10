@@ -89,7 +89,7 @@ class LoginRegisterController extends Controller
         if(Auth::attempt($credentials))
         {
             $request->session()->regenerate();
-            return redirect()->route('blogs.home');
+            return redirect()->route('home');
         }
 
         return back()->withErrors([
@@ -103,10 +103,7 @@ class LoginRegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function home()
-    {
-        return view('auth.home');
-    } 
+  
     
     /**
      * Log out the user from application.
