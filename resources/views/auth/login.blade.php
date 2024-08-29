@@ -1,6 +1,6 @@
-@extends('auth.componne')
+@extends('auth.layouts')
 
-@section('codes')
+@section('content')
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
 
@@ -71,7 +71,7 @@
         // }
         function sweetalert() {
             Swal.fire({
-                position: "bottom-right",
+                position: "bottom-top",
                 icon: "success",
                 title: "Login Successful!",
                 showConfirmButton: false,

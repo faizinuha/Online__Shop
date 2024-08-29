@@ -32,7 +32,14 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
-
+    // public function comic($title)
+    // {
+    //     // Mengambil data berdasarkan nama komik
+    //     $post = Post::where('title', $title)->firstOrFail();
+        
+    //     // Mengembalikan view dengan data komik
+    //     return view('posts.baca_cerita', compact('post'));
+    // }
     /**
      * store
      *

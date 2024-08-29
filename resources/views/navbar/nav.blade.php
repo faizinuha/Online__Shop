@@ -7,7 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    @include('auth.componne')
+    @include('auth.layouts')
+    
     <nav class="navbar navbar-expand-lg bg-danger sticky-top bg-transparent">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">blogs video</a>

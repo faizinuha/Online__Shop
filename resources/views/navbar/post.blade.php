@@ -4,6 +4,7 @@ integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG
 <!-- SweetAlert2 -->
 <link rel="stylesheet" href="sweetalert2.min.css">
 <!-- Bosstrasp core css -->
+<div class="lds-dual-ring"></div>
 <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
 <nav class="navbar navbar-expand-lg bg-danger sticky-top bg-transparent">
   <div class="container">
